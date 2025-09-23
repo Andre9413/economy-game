@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  postgres-users:
+    image: postgres:15
+    container_name: postgres-users
+    environment:
+      POSTGRES_DB: users
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+    ports:
+      - "5433:5432"
+    volumes:
+      - users-data:/var/lib/postgresql/data
+
+  postgres-companies:
+    image: postgres:15
+    container_name: postgres-companies
+    environment:
+      POSTGRES_DB: companies
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+    ports:
+      - "5434:5432"
+    volumes:
+      - companies-data:/var/lib/postgresql/data
+
+volumes:
+  users-data:
+  companies-data:
