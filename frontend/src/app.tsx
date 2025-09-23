@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import UserList from './components/UserList'
 import CompanyList from './components/CompanyList'
+import 'bootstrap/dist/css/bootstrap.css'
 
 function App() {
   const [view, setView] = useState('users')
