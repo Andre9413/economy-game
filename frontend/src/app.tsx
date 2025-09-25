@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import UserList from './components/UserList'
 import CompanyList from './components/CompanyList'
-import Navigation from "./components/Navigation";
+import NavigationBottom from "./components/navigation/bar/NavigationBottom"
+import NavigationHeader from './components/navigation/bar/NavigationHeader'
 import 'bootstrap/dist/css/bootstrap.css'
 
 function App() {
@@ -9,7 +10,10 @@ function App() {
 
   return (
       <>
-        <div style={{ padding: '20px', fontFamily: 'Arial' }}>
+          <div>
+              <NavigationHeader />
+          </div>
+          <div style={{ padding: '20px', fontFamily: 'Arial' }}>
           <h1>Game Sim Starter UI</h1>
           <nav style={{ marginBottom: '20px' }}>
             <button onClick={() => setView('users')}>Users</button>
@@ -19,7 +23,7 @@ function App() {
           {view === 'companies' && <CompanyList />}
         </div>
         <div>
-            <Navigation />
+            <NavigationBottom />
         </div>
       </>
   )
